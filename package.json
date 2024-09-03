@@ -23,6 +23,7 @@
   },
   "devDependencies": {
     "@types/koa-router": "^7.4.8",
+    "@types/node-cron": "^3.0.11",
     "@typescript-eslint/eslint-plugin": "^8.4.0",
     "@typescript-eslint/parser": "^8.4.0",
     "eslint": "^9.9.1",

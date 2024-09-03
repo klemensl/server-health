@@ -24,9 +24,12 @@ import statusRouter from './routes/routes.status';
 app.use(commonRouter.routes());
 app.use(statusRouter.routes());
 
+import * as cronJobs from './cron.jobs';
+
 const PORT = process.env.PORT || 1338;
 const server = app.listen(PORT, () => {
-  console.log(`Server listening on port: ${PORT}`);
+  console.log('Server listening on port:', PORT);
+  cronJobs.startAllJobs();
 });
 
 module.exports = server;
