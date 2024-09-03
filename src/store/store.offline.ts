@@ -19,3 +19,9 @@ export const contains = (server: string): boolean => {
 export const dump = (): string => {
   return JSON.stringify(offlineMap);
 }
+
+export const clear = (): void => {
+  Object.keys(offlineMap).forEach((key) => {
+    delete offlineMap[key];
+  });
+}

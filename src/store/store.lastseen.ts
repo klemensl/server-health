@@ -15,3 +15,9 @@ export const keys = (): string[] => {
 export const dump = (): string => {
   return JSON.stringify(lastSeenMap);
 }
+
+export const clear = (): void => {
+  Object.keys(lastSeenMap).forEach((key) => {
+    delete lastSeenMap[key];
+  });
+}
