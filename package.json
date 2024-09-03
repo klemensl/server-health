@@ -9,24 +9,34 @@
     "node": ">= 20.6.0"
   },
   "scripts": {
-    "start": "ts-node -r tsconfig-paths/register ./src/index.ts",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "ts-node --require tsconfig-paths/register ./src/index.ts",
+    "start:dev": "ts-node --require tsconfig-paths/register ./src/index.ts -- --env=dev",
+    "test": "mocha --require ts-node/register --require tsconfig-paths/register 'test/**/*.spec.ts' --timeout 5000"
   },
   "dependencies": {
     "@types/koa": "^2.15.0",
     "@types/koa-logger": "^3.1.5",
+    "command-line-args": "^6.0.0",
+    "custom-env": "^2.0.6",
     "koa": "^2.15.3",
     "koa-body": "^6.0.1",
     "koa-logger": "^3.2.1",
     "koa-router": "^12.0.1",
-    "node-cron": "^3.0.3"
+    "node-cron": "^3.0.3",
+    "node-telegram-bot-api": "^0.66.0"
   },
   "devDependencies": {
+    "@types/chai": "^4.3.19",
+    "@types/command-line-args": "^5.2.3",
     "@types/koa-router": "^7.4.8",
+    "@types/mocha": "^10.0.7",
     "@types/node-cron": "^3.0.11",
+    "@types/node-telegram-bot-api": "^0.64.7",
     "@typescript-eslint/eslint-plugin": "^8.4.0",
     "@typescript-eslint/parser": "^8.4.0",
+    "chai": "^4.3.10",
     "eslint": "^9.9.1",
+    "mocha": "^10.7.3",
     "ts-node": "^10.9.2",
     "tsconfig-paths": "^4.2.0",
     "typescript": "^5.2.2"

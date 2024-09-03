@@ -11,12 +11,12 @@ router.get(`${BASE_URL}/ping`, (ctx: ParameterizedContext) => {
   ctx.assert(typeof server === 'string', 500);
   
   lastSeen.add(server);
-  ctx.body = lastSeen.get();
+  ctx.body = lastSeen.dump();
   ctx.status = 200;
 });
 
 router.get(`${BASE_URL}/lastSeen`, (ctx: ParameterizedContext) => {
-  ctx.body = lastSeen.get();
+  ctx.body = lastSeen.dump();
 });
 
 export = router;
