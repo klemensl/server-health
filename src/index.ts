@@ -14,7 +14,6 @@ if (options.env) {
 
 import Koa from 'koa';
 import koaLogger from 'koa-logger';
-import koaBody from 'koa-body';
 
 const app = new Koa();
 
@@ -30,7 +29,6 @@ if (process.env.NODE_ENV != 'production') {
   }));
 }
 
-app.use(koaBody({}));
 
 import commonRouter from './routes/routes.common';
 import statusRouter from './routes/routes.status';
