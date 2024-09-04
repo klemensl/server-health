@@ -13,16 +13,21 @@ router.get(`${BASE_URL}/ping`, (ctx: ParameterizedContext) => {
 
   lastSeen.add(server);
   ctx.body = lastSeen.dump();
-  ctx.status = 200;
 });
 
 router.get(`${BASE_URL}/lastseen`, (ctx: ParameterizedContext) => {
   ctx.body = lastSeen.dump();
 });
 
+router.get(`${BASE_URL}/offline`, (ctx: ParameterizedContext) => {
+  ctx.body = offline.dump();
+});
+
 router.get(`${BASE_URL}/clear`, (ctx: ParameterizedContext) => {
   lastSeen.clear();
   offline.clear();
+  console.warn('all stores cleared!');
+  ctx.status = 200;
 });
 
 export = router;
